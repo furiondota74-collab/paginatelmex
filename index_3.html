@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Distribuidor Autorizado Infinitum | Internet Telmex con Carlos</title>
+<meta name="description" content="Contrata Internet Infinitum Telmex con cobertura nacional. Paquetes desde $349/mes con Netflix, HBO Max y Claro Video incluidos.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Distribuidor Autorizado Infinitum | Internet Telmex con Carlos">
+<meta property="og:description" content="Contrata Internet Infinitum Telmex con cobertura nacional. Paquetes desde $349/mes con Netflix, HBO Max y Claro Video incluidos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Bricolage+Grotesque:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --azul-telmex: #00549F;
+    --azul-oscuro: #003B73;
+    --azul-claro: #4A90D9;
+    --azul-cielo: #E8F2FB;
+    --naranja: #FF6B00;
+    --amarillo: #FFD100;
+    --verde-wa: #25D366;
+    --gris-texto: #2B2B2B;
+    --gris-suave: #6B7280;
+    --blanco: #FFFFFF;
+    --fondo: #F7FAFD;
+    --shadow-sm: 0 2px 8px rgba(0, 84, 159, 0.08);
+    --shadow-md: 0 8px 24px rgba(0, 84, 159, 0.12);
+    --shadow-lg: 0 16px 48px rgba(0, 84, 159, 0.18);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Manrope', sans-serif; color: var(--gris-texto); background: var(--blanco); line-height: 1.6; overflow-x: hidden; }
+  h1, h2, h3 { font-family: 'Bricolage Grotesque', sans-serif; line-height: 1.15; }
+
+  header { background: var(--blanco); box-shadow: var(--shadow-sm); position: sticky; top: 0; z-index: 100; }
+  .nav { max-width: 1200px; margin: 0 auto; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; }
+  .logo { display: flex; align-items: center; gap: 12px; }
+  .logo-icon { width: 44px; height: 44px; background: linear-gradient(135deg, var(--azul-telmex), var(--azul-oscuro)); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 800; font-size: 22px; font-family: 'Bricolage Grotesque', sans-serif; }
+  .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+  .logo-text strong { color: var(--azul-telmex); font-size: 18px; font-weight: 800; }
+  .logo-text span { color: var(--gris-suave); font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+  .nav-links { display: flex; gap: 32px; align-items: center; }
+  .nav-links a { text-decoration: none; color: var(--gris-texto); font-weight: 600; font-size: 15px; transition: color 0.3s; }
+  .nav-links a:hover { color: var(--azul-telmex); }
+  .btn-nav { background: var(--verde-wa); color: white !important; padding: 10px 20px; border-radius: 50px; display: flex; align-items: center; gap: 8px; }
+  .btn-nav:hover { background: #1eb558; transform: translateY(-2px); }
+  .menu-toggle { display: none; background: none; border: none; cursor: pointer; }
+
+  .hero { background: linear-gradient(135deg, var(--azul-oscuro) 0%, var(--azul-telmex) 60%, var(--azul-claro) 100%); color: white; padding: 80px 24px 100px; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: -50%; right: -10%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(255,209,0,0.15) 0%, transparent 70%); border-radius: 50%; }
+  .hero::after { content: ''; position: absolute; bottom: -100px; left: -100px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%); border-radius: 50%; }
+  .hero-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: center; position: relative; z-index: 2; }
+  .badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,209,0,0.2); border: 1px solid var(--amarillo); padding: 8px 16px; border-radius: 50px; font-size: 13px; font-weight: 700; margin-bottom: 24px; color: var(--amarillo); }
+  .hero h1 { font-size: clamp(36px, 5vw, 56px); font-weight: 800; margin-bottom: 24px; }
+  .hero h1 span { color: var(--amarillo); }
+  .hero p { font-size: 18px; margin-bottom: 32px; opacity: 0.95; max-width: 540px; }
+  .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn { padding: 16px 32px; border-radius: 50px; font-weight: 700; text-decoration: none; font-size: 16px; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s; cursor: pointer; border: none; }
+  .btn-primary { background: var(--verde-wa); color: white; box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4); }
+  .btn-primary:hover { background: #1eb558; transform: translateY(-3px); box-shadow: 0 12px 32px rgba(37, 211, 102, 0.5); }
+  .btn-secondary { background: white; color: var(--azul-telmex); }
+  .btn-secondary:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+  .hero-visual { position: relative; display: flex; justify-content: center; align-items: center; }
+  .speed-card { background: white; color: var(--gris-texto); padding: 32px; border-radius: 24px; box-shadow: var(--shadow-lg); text-align: center; transform: rotate(-3deg); position: relative; z-index: 2; width: 280px; }
+  .speed-card .speed { font-family: 'Bricolage Grotesque', sans-serif; font-size: 64px; font-weight: 800; color: var(--azul-telmex); line-height: 1; }
+  .speed-card .unit { color: var(--gris-suave); font-size: 16px; margin-bottom: 16px; }
+  .speed-card .ribbon { background: var(--naranja); color: white; padding: 8px 16px; border-radius: 50px; font-size: 13px; font-weight: 700; display: inline-block; margin-top: 8px; }
+  .floating-icon { position: absolute; background: white; width: 80px; height: 80px; border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 36px; box-shadow: var(--shadow-md); animation: float 4s ease-in-out infinite; }
+  .floating-icon:nth-child(2) { top: -20px; right: 20%; animation-delay: 0s; }
+  .floating-icon:nth-child(3) { bottom: 20px; left: 0; animation-delay: 1s; }
+  .floating-icon:nth-child(4) { top: 30%; right: 0; animation-delay: 2s; }
+  @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+
+  .trust-strip { background: white; padding: 24px; border-bottom: 1px solid #E5E7EB; }
+  .trust-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 24px; }
+  .trust-item { display: flex; align-items: center; gap: 12px; color: var(--azul-oscuro); font-weight: 600; font-size: 14px; }
+  .trust-item .icon { width: 40px; height: 40px; background: var(--azul-cielo); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; }
+
+  section { padding: 80px 24px; }
+  .container { max-width: 1200px; margin: 0 auto; }
+  .section-title { text-align: center; margin-bottom: 16px; }
+  .section-title h2 { font-size: clamp(32px, 4vw, 44px); font-weight: 800; color: var(--azul-oscuro); margin-bottom: 12px; }
+  .section-title p { font-size: 18px; color: var(--gris-suave); max-width: 600px; margin: 0 auto; }
+
+  #paquetes { background: var(--fondo); }
+  .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; margin-top: 56px; }
+  .pricing-card { background: white; border-radius: 24px; padding: 40px 32px; box-shadow: var(--shadow-sm); border: 2px solid transparent; position: relative; transition: all 0.4s; display: flex; flex-direction: column; }
+  .pricing-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-lg); border-color: var(--azul-telmex); }
+  .pricing-card.featured { border-color: var(--naranja); background: linear-gradient(180deg, #FFF8F2 0%, white 100%); }
+  .pricing-card.featured::before { content: 'MÁS POPULAR'; position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--naranja); color: white; padding: 6px 20px; border-radius: 50px; font-size: 12px; font-weight: 800; letter-spacing: 1px; white-space: nowrap; }
+  .pkg-icon { width: 64px; height: 64px; background: linear-gradient(135deg, var(--azul-telmex), var(--azul-claro)); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 24px; color: white; }
+  .pkg-name { font-size: 14px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gris-suave); font-weight: 700; margin-bottom: 8px; }
+  .pkg-speed { font-family: 'Bricolage Grotesque', sans-serif; font-size: 56px; font-weight: 800; color: var(--azul-oscuro); line-height: 1; }
+  .pkg-speed small { font-size: 24px; color: var(--gris-suave); font-weight: 600; }
+  .pkg-desc { color: var(--gris-suave); margin: 12px 0 24px; font-size: 15px; }
+  .pkg-price { font-family: 'Bricolage Grotesque', sans-serif; font-size: 42px; font-weight: 800; color: var(--azul-telmex); margin-bottom: 4px; }
+  .pkg-price small { font-size: 16px; color: var(--gris-suave); font-weight: 500; }
+  .pkg-features { list-style: none; margin: 24px 0; flex-grow: 1; }
+  .pkg-features li { padding: 10px 0; display: flex; align-items: center; gap: 12px; color: var(--gris-texto); font-size: 15px; border-bottom: 1px solid #F0F4F8; }
+  .pkg-features li::before { content: '✓'; width: 24px; height: 24px; background: var(--azul-cielo); color: var(--azul-telmex); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 13px; flex-shrink: 0; }
+  .pkg-cta { background: var(--azul-telmex); color: white; padding: 14px; border-radius: 12px; text-align: center; text-decoration: none; font-weight: 700; transition: all 0.3s; display: block; }
+  .pkg-cta:hover { background: var(--azul-oscuro); transform: translateY(-2px); }
+  .pricing-card.featured .pkg-cta { background: var(--naranja); }
+  .pricing-card.featured .pkg-cta:hover { background: #e85d00; }
+
+  #beneficios { background: white; }
+  .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 56px; }
+  .benefit-card { background: var(--fondo); border-radius: 20px; padding: 32px; transition: all 0.4s; border-left: 4px solid var(--azul-telmex); }
+  .benefit-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); background: white; }
+  .benefit-icon { font-size: 40px; margin-bottom: 16px; }
+  .benefit-card h3 { font-size: 20px; color: var(--azul-oscuro); margin-bottom: 12px; font-weight: 700; }
+  .benefit-card p { color: var(--gris-suave); font-size: 15px; line-height: 1.6; }
+
+  #streaming { background: linear-gradient(135deg, var(--azul-oscuro), var(--azul-telmex)); color: white; }
+  #streaming .section-title h2 { color: white; }
+  #streaming .section-title p { color: rgba(255,255,255,0.85); }
+  .streaming-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-top: 56px; }
+  .streaming-card { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 32px 24px; text-align: center; transition: all 0.3s; }
+  .streaming-card:hover { background: rgba(255,255,255,0.15); transform: translateY(-6px); }
+  .streaming-logo { font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; font-weight: 800; margin-bottom: 12px; }
+  .streaming-card p { font-size: 14px; opacity: 0.9; }
+  .streaming-card .badge-mini { display: inline-block; background: var(--amarillo); color: var(--azul-oscuro); padding: 4px 12px; border-radius: 50px; font-size: 11px; font-weight: 800; margin-top: 12px; letter-spacing: 0.5px; }
+
+  #instalacion { background: var(--fondo); }
+  .install-box { background: white; border-radius: 24px; padding: 48px; margin-top: 40px; box-shadow: var(--shadow-md); display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+  .install-text h3 { font-size: 28px; color: var(--azul-oscuro); margin-bottom: 16px; }
+  .install-text p { color: var(--gris-suave); margin-bottom: 16px; }
+  .install-amounts { display: flex; flex-direction: column; gap: 16px; }
+  .amount-item { background: var(--azul-cielo); padding: 24px; border-radius: 16px; border-left: 4px solid var(--azul-telmex); }
+  .amount-item .amount { font-family: 'Bricolage Grotesque', sans-serif; font-size: 32px; font-weight: 800; color: var(--azul-telmex); }
+  .amount-item p { font-size: 14px; color: var(--gris-texto); margin: 0; }
+
+  /* ===== CAMBIO DE COMPAÑÍA ===== */
+  .cambio-hero { text-align: center; margin: 48px auto 40px; max-width: 700px; }
+  .cambio-badge { display: inline-block; background: linear-gradient(135deg, var(--naranja), #FF8C00); color: white; padding: 8px 20px; border-radius: 50px; font-size: 13px; font-weight: 800; letter-spacing: 1px; margin-bottom: 16px; box-shadow: 0 4px 16px rgba(255, 107, 0, 0.3); }
+  .cambio-title { font-size: clamp(28px, 4vw, 38px); color: var(--azul-oscuro); font-weight: 800; margin-bottom: 12px; }
+  .cambio-subtitle { color: var(--gris-suave); font-size: 17px; }
+
+  .competidores-logos { display: flex; justify-content: center; align-items: center; gap: 32px; flex-wrap: wrap; margin: 32px 0 48px; padding: 24px; background: var(--fondo); border-radius: 20px; }
+  .competidor { display: flex; flex-direction: column; align-items: center; gap: 8px; opacity: 0.7; transition: opacity 0.3s; }
+  .competidor:hover { opacity: 1; }
+  .competidor-logo { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 22px; padding: 12px 24px; border-radius: 12px; min-width: 140px; text-align: center; }
+  .competidor-name { font-size: 12px; color: var(--gris-suave); text-transform: uppercase; letter-spacing: 1px; }
+
+  .cambio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 40px; }
+  .cambio-card { padding: 36px; border-radius: 24px; }
+  .cambio-card.competencia { background: #FFF5F5; border: 2px solid #FECACA; }
+  .cambio-card.competencia h4 { color: #DC2626; font-size: 22px; margin-bottom: 20px; }
+  .cambio-card.competencia ul { list-style: none; }
+  .cambio-card.competencia li { padding: 12px 0; color: #7B2D2D; font-size: 15px; border-bottom: 1px solid #FECACA; }
+  .cambio-card.ganador { background: linear-gradient(180deg, #F0F9FF 0%, white 100%); border: 2px solid var(--azul-telmex); position: relative; box-shadow: var(--shadow-md); }
+  .winner-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--azul-telmex); color: white; padding: 6px 18px; border-radius: 50px; font-size: 11px; font-weight: 800; letter-spacing: 1px; white-space: nowrap; }
+  .cambio-card.ganador h4 { color: var(--azul-oscuro); font-size: 22px; margin-bottom: 20px; }
+  .cambio-card.ganador ul { list-style: none; }
+  .cambio-card.ganador li { padding: 12px 0; color: var(--gris-texto); font-size: 15px; border-bottom: 1px solid var(--azul-cielo); }
+  .cambio-card.ganador li strong { color: var(--azul-telmex); }
+
+  #cta { background: linear-gradient(135deg, var(--naranja) 0%, #FF8C00 100%); color: white; text-align: center; }
+  #cta h2 { font-size: clamp(32px, 4vw, 48px); font-weight: 800; margin-bottom: 16px; }
+  #cta p { font-size: 18px; margin-bottom: 32px; opacity: 0.95; max-width: 600px; margin-left: auto; margin-right: auto; }
+  .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  #cta .btn-primary { background: white; color: var(--naranja); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+  #cta .btn-primary:hover { background: var(--azul-cielo); }
+
+  footer { background: var(--azul-oscuro); color: white; padding: 60px 24px 24px; }
+  .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
+  .footer-content h4 { font-family: 'Bricolage Grotesque', sans-serif; font-size: 18px; margin-bottom: 16px; color: var(--amarillo); }
+  .footer-content p, .footer-content a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 15px; line-height: 1.8; display: block; }
+  .footer-content a:hover { color: var(--amarillo); }
+  .social-links { display: flex; gap: 12px; margin-top: 16px; }
+  .social-links a { width: 44px; height: 44px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; transition: all 0.3s; }
+  .social-links a:hover { background: var(--amarillo); color: var(--azul-oscuro); transform: translateY(-3px); }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.15); padding-top: 24px; text-align: center; font-size: 14px; color: rgba(255,255,255,0.7); }
+
+  .wa-float { position: fixed; bottom: 24px; right: 24px; background: var(--verde-wa); color: white; width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 8px 24px rgba(37, 211, 102, 0.5); text-decoration: none; z-index: 99; transition: all 0.3s; animation: pulse 2s infinite; }
+  .wa-float:hover { transform: scale(1.1); }
+  @keyframes pulse { 0%, 100% { box-shadow: 0 8px 24px rgba(37, 211, 102, 0.5); } 50% { box-shadow: 0 8px 32px rgba(37, 211, 102, 0.8), 0 0 0 12px rgba(37, 211, 102, 0.2); } }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .nav-links.active { display: flex; position: absolute; top: 76px; left: 0; right: 0; flex-direction: column; background: white; padding: 24px; gap: 16px; box-shadow: var(--shadow-md); }
+    .menu-toggle { display: block; font-size: 28px; color: var(--azul-telmex); }
+    .hero { padding: 48px 20px 60px; }
+    .hero-content { grid-template-columns: 1fr; gap: 40px; }
+    .hero-visual { order: -1; min-height: 280px; }
+    .hero h1 { font-size: 32px; }
+    .hero p { font-size: 16px; }
+    .floating-icon { width: 56px; height: 56px; font-size: 26px; }
+    .floating-icon:nth-child(2) { top: -10px; right: 8%; }
+    .floating-icon:nth-child(3) { bottom: 10px; left: 5%; }
+    .floating-icon:nth-child(4) { top: 35%; right: 5%; }
+    .speed-card { width: 220px; padding: 24px; }
+    .speed-card .speed { font-size: 48px; }
+    .install-box { grid-template-columns: 1fr; padding: 32px 24px; gap: 24px; }
+    .footer-content { grid-template-columns: 1fr; gap: 32px; }
+    .footer-content { text-align: left; }
+    section { padding: 60px 20px; }
+    .cambio-grid { grid-template-columns: 1fr; gap: 24px; }
+    .cambio-card { padding: 28px 22px; }
+    .cambio-card.ganador { padding-top: 36px; }
+    .competidores-logos { gap: 14px; padding: 20px; }
+    .competidor-logo { min-width: 100px; font-size: 16px; padding: 10px 14px; }
+    .hero-buttons .btn { padding: 14px 24px; font-size: 15px; width: 100%; justify-content: center; }
+    .pricing-grid { gap: 24px; }
+    .pricing-card { padding: 32px 24px; }
+    .benefits-grid { gap: 16px; }
+    .benefit-card { padding: 24px; }
+    .streaming-grid { gap: 16px; }
+    .cta-buttons .btn { width: 100%; justify-content: center; }
+    /* Espacio extra abajo para que el botón flotante de WhatsApp no tape contenido */
+    footer { padding-bottom: 100px; }
+    .wa-float { width: 56px; height: 56px; font-size: 26px; bottom: 16px; right: 16px; }
+    /* Centrar redes sociales del footer */
+    .social-links { justify-content: flex-start; }
+  }
+
+  @media (max-width: 380px) {
+    .hero h1 { font-size: 28px; }
+    .speed-card { width: 200px; padding: 20px; }
+    .speed-card .speed { font-size: 42px; }
+    .pkg-speed { font-size: 44px; }
+    .pkg-price { font-size: 36px; }
+    .competidor-logo { min-width: 90px; font-size: 14px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav" role="navigation" aria-label="Menú principal">
+    <div class="logo">
+      <div class="logo-icon">∞</div>
+      <div class="logo-text">
+        <strong>Infinitum</strong>
+        <span>Distribuidor Autorizado</span>
+      </div>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="#paquetes">Paquetes</a>
+      <a href="#cambio">Cambiarme a Telmex</a>
+      <a href="#beneficios">Beneficios</a>
+      <a href="#streaming">Entretenimiento</a>
+      <a href="#contacto">Contacto</a>
+      <a href="https://wa.me/522292225584?text=Hola%20Carlos,%20quiero%20información%20sobre%20Internet%20Infinitum" class="btn-nav" target="_blank" rel="noopener noreferrer">
+        <span>💬</span> WhatsApp
+      </a>
+    </div>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="navLinks" onclick="toggleMenu()">☰</button>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <div>
+      <div class="badge">⭐ Distribuidor Autorizado Telmex</div>
+      <h1>Internet Infinitum<br><span>al mejor precio</span><br>en todo México 🇲🇽</h1>
+      <p>Soy Carlos, tu asesor personal de Telmex. Te ayudo a contratar el mejor paquete de internet con cobertura nacional, asesoría sin costo y los mejores beneficios.</p>
+      <div class="hero-buttons">
+        <a href="https://wa.me/522292225584?text=Hola%20Carlos,%20quiero%20contratar%20Internet%20Infinitum" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <span>💬</span> Contratar por WhatsApp
+        </a>
+        <a href="#paquetes" class="btn btn-secondary">Ver Paquetes</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="speed-card">
+        <div class="speed">150</div>
+        <div class="unit">Megas de bajada</div>
+        <div class="ribbon">DESDE $349/mes</div>
+      </div>
+      <div class="floating-icon">📺</div>
+      <div class="floating-icon">🎬</div>
+      <div class="floating-icon">⚡</div>
+    </div>
+  </div>
+</section>
+
+<div class="trust-strip">
+  <div class="trust-content">
+    <div class="trust-item"><div class="icon">🇲🇽</div> Cobertura Nacional</div>
+    <div class="trust-item"><div class="icon">🔒</div> Distribuidor Oficial</div>
+    <div class="trust-item"><div class="icon">⚡</div> Fibra Óptica</div>
+    <div class="trust-item"><div class="icon">🎁</div> Sin Aumentos</div>
+    <div class="trust-item"><div class="icon">📞</div> Asesoría Gratis</div>
+  </div>
+</div>
+
+<section id="paquetes">
+  <div class="container">
+    <div class="section-title">
+      <h2>Elige tu Paquete Infinitum</h2>
+      <p>Precios con impuestos incluidos. Vigencia 31 de mayo de 2026.</p>
+    </div>
+    <div class="pricing-grid">
+
+      <div class="pricing-card">
+        <div class="pkg-icon">📡</div>
+        <div class="pkg-name">Solo Internet</div>
+        <div class="pkg-speed">120<small>Megas</small></div>
+        <p class="pkg-desc">Ideal para hogares pequeños y uso básico</p>
+        <div class="pkg-price">$349<small>/mes</small></div>
+        <ul class="pkg-features">
+          <li>120 Mbps de bajada</li>
+          <li>Solo servicio de internet</li>
+          <li>Claro Video sin costo extra</li>
+          <li>Netflix gratis 6 meses al domiciliar</li>
+          <li>HBO Max gratis 6 meses</li>
+        </ul>
+        <a href="https://wa.me/522292225584?text=Hola%20Carlos,%20me%20interesa%20el%20paquete%20Solo%20Internet%20de%20120%20Megas%20por%20%24349" target="_blank" rel="noopener noreferrer" class="pkg-cta">Contratar este paquete</a>
+      </div>
+
+      <div class="pricing-card featured">
+        <div class="pkg-icon">📞</div>
+        <div class="pkg-name">Internet + Teléfono</div>
+        <div class="pkg-speed">120<small>Megas</small></div>
+        <p class="pkg-desc">Internet + línea telefónica con llamadas ilimitadas</p>
+        <div class="pkg-price">$389<small>/mes</small></div>
+        <ul class="pkg-features">
+          <li>120 Mbps de bajada</li>
+          <li>Línea telefónica incluida</li>
+          <li>Llamadas ilimitadas a México, USA y Canadá</li>
+          <li>Claro Video sin costo extra</li>
+          <li>Netflix gratis 6 meses al domiciliar</li>
+          <li>HBO Max gratis 6 meses</li>
+        </ul>
+        <a href="https://wa.me/522292225584?text=Hola%20Carlos,%20me%20interesa%20el%20paquete%20Internet%20%2B%20Tel%C3%A9fono%20de%20120%20Megas%20por%20%24389" target="_blank" rel="noopener noreferrer" class="pkg-cta">Contratar este paquete</a>
+      </div>
+
+      <div class="pricing-card">
+        <div class="pkg-icon">🚀</div>
+        <div class="pkg-name">Solo Internet</div>
+        <div class="pkg-speed">150<small>Megas</small></div>
+        <p class="pkg-desc">Más velocidad para streaming y home office</p>
+        <div class="pkg-price">$399<small>/mes</small></div>
+        <ul class="pkg-features">
+          <li>150 Mbps de bajada</li>
+          <li>Solo servicio de internet</li>
+          <li>Más velocidad para varios dispositivos</li>
+          <li>Claro Video sin costo extra</li>
+          <li>Netflix gratis 6 meses al domiciliar</li>
+          <li>HBO Max gratis 6 meses</li>
+        </ul>
+        <a href="https://wa.me/522292225584?text=Hola%20Carlos,%20me%20interesa%20el%20paquete%20Solo%20Internet%20de%20150%20Megas%20por%20%24399" target="_blank" rel="noopener noreferrer" class="pkg-cta">Contratar este paquete</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="beneficios">
+  <div class="container">
+    <div class="section-title">
+      <h2>¿Por qué Infinitum con Carlos?</h2>
+      <p>Beneficios exclusivos que solo obtienes con un distribuidor autorizado</p>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">🎬</div>
+        <h3>Claro Video sin costo</h3>
+        <p>Disfruta de Claro Video gratis durante todo el tiempo que tengas tu servicio. Sin pagos extras.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">📺</div>
+        <h3>HBO Max 6 meses gratis</h3>
+        <p>Series, películas y todos los estrenos de HBO Max sin costo durante los primeros 6 meses.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🍿</div>
+        <h3>Netflix 6 meses gratis</h3>
+        <p>Al domiciliar tu pago, te llevas Netflix gratis durante 6 meses. Streaming sin límites.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🔒</div>
+        <h3>Precio Fijo Garantizado</h3>
+        <p>Telmex Infinitum es el único proveedor que NO ha aumentado sus precios en 18 años. Tu renta no sube.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">💳</div>
+        <h3>Crédito a tu Recibo</h3>
+        <p>Si pagas puntual, accedes a un crédito para comprar productos a meses sin intereses con cargo a tu recibo.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">⚡</div>
+        <h3>Fibra Óptica Real</h3>
+        <p>Más de 600,000 km de fibra óptica respaldan tu servicio. Velocidad estable y conexión confiable.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🤝</div>
+        <h3>Asesoría Personalizada</h3>
+        <p>Te atiendo personalmente. Apoyo con reportes, quejas y soporte técnico. Trato amigable y de confianza siempre que me necesites.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="streaming">
+  <div class="container">
+    <div class="section-title">
+      <h2>Entretenimiento Incluido 🎉</h2>
+      <p>Las mejores plataformas de streaming, todas en un solo lugar</p>
+    </div>
+    <div class="streaming-grid">
+      <div class="streaming-card">
+        <div class="streaming-logo">NETFLIX</div>
+        <p>Series y películas originales</p>
+        <span class="badge-mini">6 MESES GRATIS</span>
+      </div>
+      <div class="streaming-card">
+        <div class="streaming-logo">HBO Max</div>
+        <p>Estrenos exclusivos de Warner</p>
+        <span class="badge-mini">6 MESES GRATIS</span>
+      </div>
+      <div class="streaming-card">
+        <div class="streaming-logo">Claro video</div>
+        <p>Películas y series sin costo</p>
+        <span class="badge-mini">SIEMPRE GRATIS</span>
+      </div>
+      <div class="streaming-card">
+        <div class="streaming-logo">F1 TV</div>
+        <p>Toda la Fórmula 1 en vivo</p>
+        <span class="badge-mini">DISPONIBLE</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="instalacion">
+  <div class="container">
+    <div class="section-title">
+      <h2>Instalación Sin Pagos Iniciales 💪</h2>
+      <p>Sin preocuparte por pagar de contado los $1,600 de instalación</p>
+    </div>
+    <div class="install-box">
+      <div class="install-text">
+        <h3>¿Cómo funciona?</h3>
+        <p>El costo total de instalación es de <strong>$1,600 pesos</strong>, pero <strong>NO los pagas de contado</strong>:</p>
+        <p>✅ Te diferimos $1,200 a 12 meses cómodos en tu recibo<br>
+        ✅ Solo $400 vienen en tu primer recibo<br>
+        ✅ Sin intereses ni cargos extra</p>
+        <a href="https://wa.me/522292225584?text=Hola%20Carlos,%20quiero%20saber%20m%C3%A1s%20sobre%20la%20instalaci%C3%B3n" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top: 16px;">
+          <span>💬</span> Quiero saber más
+        </a>
+      </div>
+      <div class="install-amounts">
+        <div class="amount-item">
+          <div class="amount">$400</div>
+          <p>En tu primer recibo</p>
+        </div>
+        <div class="amount-item">
+          <div class="amount">$100<small style="font-size:16px;">/mes x 12</small></div>
+          <p>Diferidos a 12 meses ($1,200 total)</p>
+        </div>
+        <div class="amount-item" style="background: #FFF8E1; border-left-color: var(--naranja);">
+          <div class="amount" style="color: var(--naranja);">$0</div>
+          <p>De pago de contado al instalar</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CAMBIO DE COMPAÑÍA ===== -->
+<section id="cambio" style="background: white;">
+  <div class="container">
+    <div class="section-title">
+      <h2>¿Tienes Izzi, Megacable o Totalplay? 🔄</h2>
+      <p>Cámbiate a Telmex Infinitum y descubre por qué somos la mejor opción</p>
+    </div>
+
+    <div class="cambio-hero">
+      <div class="cambio-badge">⭐ OFERTA ESPECIAL DE CAMBIO</div>
+      <h3 class="cambio-title">Quiero cambiarme a Telmex</h3>
+      <p class="cambio-subtitle">Si actualmente tienes servicio con otra compañía, te ayudo a hacer el cambio fácil y rápido</p>
+    </div>
+
+    <div class="competidores-logos">
+      <div class="competidor">
+        <div class="competidor-logo" style="background: #E30613; color: white;">izzi</div>
+        <span class="competidor-name">¿Tienes Izzi?</span>
+      </div>
+      <div class="competidor">
+        <div class="competidor-logo" style="background: #00A859; color: white;">Megacable</div>
+        <span class="competidor-name">¿Tienes Megacable?</span>
+      </div>
+      <div class="competidor">
+        <div class="competidor-logo" style="background: #6F1D7E; color: white;">Totalplay</div>
+        <span class="competidor-name">¿Tienes Totalplay?</span>
+      </div>
+    </div>
+
+    <div class="cambio-grid">
+      <div class="cambio-card competencia">
+        <h4>❌ Otras compañías</h4>
+        <ul>
+          <li>📈 Aumentos constantes de precio</li>
+          <li>🚫 Sin streaming incluido o con costo extra</li>
+          <li>⏰ Promociones que vencen y suben tu renta</li>
+          <li>📞 Soporte impersonal y lento</li>
+          <li>💸 Costos ocultos en el recibo</li>
+        </ul>
+      </div>
+      <div class="cambio-card ganador">
+        <div class="winner-badge">✓ TELMEX INFINITUM</div>
+        <h4>✅ Cambiándote conmigo</h4>
+        <ul>
+          <li>🔒 Precio fijo de <strong>$389</strong> por Internet 120MB + Línea</li>
+          <li>🎬 <strong>Claro Video</strong> sin costo adicional</li>
+          <li>🍿 <strong>Netflix gratis 6 meses</strong> al domiciliar</li>
+          <li>📺 <strong>HBO Max gratis 6 meses</strong></li>
+          <li>📈 Sin aumentos en 18 años (récord en México)</li>
+          <li>🤝 Asesoría personalizada conmigo, Carlos</li>
+          <li>⚡ Fibra óptica con cobertura nacional</li>
+        </ul>
+        <a href="https://wa.me/522292225584?text=Hola%20Carlos,%20quiero%20cambiarme%20a%20Telmex%20Infinitum%20desde%20mi%20compa%C3%B1%C3%ADa%20actual" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 16px;">
+          <span>💬</span> Quiero cambiarme ahora
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <div class="container">
+    <h2>¿Listo para contratar tu Internet Infinitum?</h2>
+    <p>Mándame un WhatsApp ahora mismo y te ayudo a elegir el mejor paquete para tu hogar. Asesoría 100% gratuita y sin compromiso.</p>
+    <div class="cta-buttons">
+      <a href="https://wa.me/522292225584?text=Hola%20Carlos,%20quiero%20contratar%20Internet%20Infinitum" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+        <span>💬</span> Escribir por WhatsApp
+      </a>
+      <a href="tel:+522292225584" class="btn btn-secondary" style="background: rgba(255,255,255,0.2); color: white; border: 2px solid white;">
+        <span>📞</span> Llamar ahora
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer id="contacto" role="contentinfo">
+  <div class="footer-content">
+    <div>
+      <div class="logo" style="margin-bottom: 16px;">
+        <div class="logo-icon">∞</div>
+        <div class="logo-text">
+          <strong style="color: white;">Infinitum</strong>
+          <span style="color: var(--amarillo);">Distribuidor Autorizado</span>
+        </div>
+      </div>
+      <p>Soy Carlos, asesor autorizado de Telmex Infinitum. Te ayudo a contratar el mejor paquete de internet con cobertura nacional y todos los beneficios oficiales.</p>
+      <div class="social-links">
+        <a href="https://www.facebook.com/profile.php?id=61564375097611" target="_blank" rel="noopener noreferrer" title="Facebook" aria-label="Facebook">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/asesor.internet.carlos/" target="_blank" rel="noopener noreferrer" title="Instagram" aria-label="Instagram">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="https://wa.me/522292225584" target="_blank" rel="noopener noreferrer" title="WhatsApp" aria-label="WhatsApp">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <h4>Contacto</h4>
+      <a href="https://wa.me/522292225584" target="_blank" rel="noopener noreferrer">📱 WhatsApp: 229 222 5584</a>
+      <a href="tel:+522292225584">📞 Llamar: 229 222 5584</a>
+      <p>🇲🇽 Cobertura Nacional</p>
+      <p>⏰ Lun - Sáb: 9:00 - 20:00</p>
+    </div>
+    <div role="navigation" aria-label="Enlaces de servicios">
+      <h4>Servicios</h4>
+      <a href="#paquetes">Paquetes Infinitum</a>
+      <a href="#beneficios">Beneficios</a>
+      <a href="#streaming">Streaming Incluido</a>
+      <a href="#instalacion">Instalación</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Distribuidor Autorizado Infinitum · Carlos. Telmex e Infinitum son marcas registradas de Teléfonos de México, S.A.B. de C.V.</p>
+  </div>
+</footer>
+
+<a href="https://wa.me/522292225584?text=Hola%20Carlos,%20quiero%20información%20sobre%20Internet%20Infinitum" target="_blank" rel="noopener noreferrer" class="wa-float" title="Chatea conmigo">💬</a>
+
+<script>
+  function toggleMenu() {
+    const navLinks = document.getElementById('navLinks');
+    navLinks.classList.toggle('active');
+    const button = document.querySelector('.menu-toggle');
+    const expanded = navLinks.classList.contains('active');
+    button.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+  }
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.remove('active');
+      document.querySelector('.menu-toggle').setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Animación on scroll - solo si IntersectionObserver es soportado
+  if ('IntersectionObserver' in window) {
+    const observerOptions = { threshold: 0.05, rootMargin: '0px 0px -50px 0px' };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    document.querySelectorAll('.pricing-card, .benefit-card, .streaming-card').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = 'all 0.6s ease-out';
+      observer.observe(el);
+    });
+
+    // Failsafe: después de 3s mostrar TODO sí o sí
+    setTimeout(() => {
+      document.querySelectorAll('.pricing-card, .benefit-card, .streaming-card').forEach(el => {
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+      });
+    }, 3000);
+  }
+</script>
+
+</body>
+</html>
